@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>收案儀表板|數位治理計畫</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html"><span class="logo-dot"></span>數位治理計畫</a>
+      <button class="nav-toggle" aria-label="開啟選單">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="dashboard.html" class="active">收案儀表板</a></li>
+        <li><a href="courses.html">課程公告</a></li>
+        <li><a href="handbook.html">教學手冊</a></li>
+        <li><a href="clinics.html">合作診所</a></li>
+        <li><a href="gallery.html">活動花絮</a></li>
+        <li><a href="meetings.html">會議紀錄</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <h1>收案儀表板</h1>
+    <p>各合作診所收案進度總覽,資料定期更新</p>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <!-- 密碼鎖定畫面 -->
+      <div class="lock-panel" id="lock-panel">
+        <div class="lock-icon">🔒</div>
+        <h2>此頁面受密碼保護</h2>
+        <p>請輸入通行碼以查看收案儀表板</p>
+        <form id="lock-form">
+          <input type="password" id="lock-input" placeholder="輸入通行碼" autocomplete="current-password" />
+          <button type="submit" class="btn btn-unlock">解鎖</button>
+        </form>
+        <p class="lock-error" id="lock-error" style="display:none">通行碼錯誤,請再試一次</p>
+      </div>
+
+      <!-- 解鎖後顯示的內容 -->
+      <div id="dash-content" style="display:none">
+      <div class="notice">
+        <span>💡</span>
+        <span id="data-source-note">資料載入中…</span>
+      </div>
+      <div class="notice error" id="load-error" style="display:none">
+        <span>⚠️</span>
+        <span></span>
+      </div>
+
+      <!-- 總覽 -->
+      <div class="stat-row">
+        <div class="stat-tile"><div class="label">參與診所</div><div class="value" id="stat-clinics">–</div></div>
+        <div class="stat-tile"><div class="label">收案總目標</div><div class="value"><span id="stat-target">–</span><small>人</small></div></div>
+        <div class="stat-tile"><div class="label">實際收案</div><div class="value"><span id="stat-actual">–</span><small>人</small></div></div>
+        <div class="stat-tile"><div class="label">整體達標率</div><div class="value"><span id="stat-rate">–</span><small>%</small></div></div>
+      </div>
+
+      <!-- 各診所達標率指針儀表 -->
+      <div class="gauge-grid" id="clinic-list"></div>
+
+      <!-- 明細表 -->
+      <div class="table-scroll">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>醫療院所名稱</th>
+              <th class="num" id="th-target">收案目標</th>
+              <th class="num" id="th-actual">實際收案</th>
+              <th class="num">距目標差距</th>
+              <th class="num">達標率</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+      </div><!-- /#dash-content -->
+    </div>
+  </section>
+
+  <footer class="footer">© 2026 數位治理計畫 · 合作診所入口網</footer>
+
+  <script src="assets/site.js"></script>
+  <script src="assets/dashboard.js"></script>
+</body>
+</html>

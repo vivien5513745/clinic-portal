@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>數位治理計畫|合作診所入口網</title>
+  <meta name="description" content="數位治理計畫合作診所入口網:收案儀表板、課程公告、教學手冊、合作診所與活動花絮。" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html"><span class="logo-dot"></span>數位治理計畫</a>
+      <button class="nav-toggle" aria-label="開啟選單">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">首頁</a></li>
+        <li><a href="dashboard.html">收案儀表板</a></li>
+        <li><a href="courses.html">課程公告</a></li>
+        <li><a href="handbook.html">教學手冊</a></li>
+        <li><a href="clinics.html">合作診所</a></li>
+        <li><a href="gallery.html">活動花絮</a></li>
+        <li><a href="meetings.html">會議紀錄</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 主視覺 -->
+  <header class="hero">
+    <!-- 科技感網絡背景 -->
+    <svg class="hero-net" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g stroke="#58e6da" stroke-width="1" opacity="0.35">
+        <line x1="80" y1="120" x2="240" y2="60" /><line x1="240" y1="60" x2="420" y2="150" />
+        <line x1="420" y1="150" x2="300" y2="300" /><line x1="300" y1="300" x2="80" y2="120" />
+        <line x1="300" y1="300" x2="180" y2="480" /><line x1="180" y1="480" x2="60" y2="380" />
+        <line x1="60" y1="380" x2="80" y2="120" /><line x1="420" y1="150" x2="560" y2="80" />
+        <line x1="820" y1="90" x2="960" y2="180" /><line x1="960" y1="180" x2="1120" y2="110" />
+        <line x1="960" y1="180" x2="1040" y2="330" /><line x1="1040" y1="330" x2="1160" y2="420" />
+        <line x1="1040" y1="330" x2="880" y2="420" /><line x1="880" y1="420" x2="980" y2="530" />
+        <line x1="880" y1="420" x2="760" y2="520" /><line x1="820" y1="90" x2="700" y2="40" />
+        <line x1="1120" y1="110" x2="1160" y2="250" /><line x1="1160" y1="250" x2="1040" y2="330" />
+      </g>
+      <g fill="#7deee4">
+        <circle cx="80" cy="120" r="4" /><circle cx="240" cy="60" r="3" /><circle cx="420" cy="150" r="5" />
+        <circle cx="300" cy="300" r="4" /><circle cx="180" cy="480" r="3" /><circle cx="60" cy="380" r="3" />
+        <circle cx="560" cy="80" r="3" /><circle cx="700" cy="40" r="3" /><circle cx="820" cy="90" r="4" />
+        <circle cx="960" cy="180" r="5" /><circle cx="1120" cy="110" r="3" /><circle cx="1160" cy="250" r="4" />
+        <circle cx="1040" cy="330" r="5" /><circle cx="880" cy="420" r="4" /><circle cx="1160" cy="420" r="3" />
+        <circle cx="980" cy="530" r="3" /><circle cx="760" cy="520" r="3" />
+      </g>
+      <g fill="#ffffff" opacity="0.85">
+        <circle cx="420" cy="150" r="1.6" /><circle cx="960" cy="180" r="1.6" /><circle cx="1040" cy="330" r="1.6" />
+      </g>
+    </svg>
+    <div class="hero-glow g1" aria-hidden="true"></div>
+    <div class="hero-glow g2" aria-hidden="true"></div>
+
+    <span class="hero-badge">DIGITAL GOVERNANCE</span>
+    <h1><span class="line1">從分級醫療</span><span class="grad">到數位治理</span></h1>
+    <p>合作診所專屬入口網站——即時掌握收案進度、課程資訊與教學資源,讓基層醫療的數位轉型更簡單。</p>
+
+    <!-- 六角形標籤 -->
+    <div class="hex-row" aria-hidden="true">
+      <span class="hex c1">收案<br />儀表板</span><span class="hex-x">✕</span>
+      <span class="hex c2">課程<br />培訓</span><span class="hex-x">✕</span>
+      <span class="hex c1">教學<br />資源</span><span class="hex-x">✕</span>
+      <span class="hex c2">合作<br />網絡</span>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="dashboard.html">查看收案儀表板</a>
+      <a class="btn btn-ghost" href="courses.html">最新課程公告</a>
+    </div>
+  </header>
+
+  <!-- 功能導覽 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Features</div>
+        <h2>平台功能</h2>
+        <p>為參與計畫的診所人員設計,所有資訊一站掌握。</p>
+      </div>
+      <div class="grid grid-3">
+        <a class="card" href="dashboard.html">
+          <div class="icon">📊</div>
+          <h3>收案儀表板</h3>
+          <p>即時查看各合作診所的收案目標、實際收案人數、差距與達標率,進度一目了然。</p>
+          <span class="card-link">前往查看 →</span>
+        </a>
+        <a class="card" href="courses.html">
+          <div class="icon">📅</div>
+          <h3>課程公告</h3>
+          <p>教育訓練與工作坊的最新資訊,掌握報名時程,不錯過任何一場課程。</p>
+          <span class="card-link">前往查看 →</span>
+        </a>
+        <a class="card" href="handbook.html">
+          <div class="icon">📖</div>
+          <h3>教學手冊下載</h3>
+          <p>收案流程、系統操作等教學文件集中下載,新進人員也能快速上手。</p>
+          <span class="card-link">前往查看 →</span>
+        </a>
+        <a class="card" href="clinics.html">
+          <div class="icon">📍</div>
+          <h3>合作診所</h3>
+          <p>參與計畫的診所名單與位置地圖,快速找到鄰近的合作夥伴。</p>
+          <span class="card-link">前往查看 →</span>
+        </a>
+        <a class="card" href="gallery.html">
+          <div class="icon">📷</div>
+          <h3>活動花絮</h3>
+          <p>回顧歷次課程與活動的精彩片段,見證計畫一路走來的成果。</p>
+          <span class="card-link">前往查看 →</span>
+        </a>
+        <div class="card">
+          <div class="icon">🔐</div>
+          <h3>會員專區(即將推出)</h3>
+          <p>未來將提供會員註冊與審核機制,儀表板等專屬功能將限會員使用。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 計畫簡介 -->
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">About</div>
+        <h2>關於數位治理計畫</h2>
+        <p>結合基層診所量能,以數據驅動的方式推動醫療數位轉型。透過統一的收案管理與教育訓練,協助每一間合作診所穩健達成目標。</p>
+      </div>
+      <div style="text-align:center">
+        <a class="btn btn-primary" href="dashboard.html">🔒 查看收案數據儀表板(需通行碼)</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="foot-links">
+      <a href="dashboard.html">收案儀表板</a>
+      <a href="courses.html">課程公告</a>
+      <a href="handbook.html">教學手冊</a>
+      <a href="clinics.html">合作診所</a>
+      <a href="gallery.html">活動花絮</a>
+      <a href="meetings.html">會議紀錄</a>
+    </div>
+    © 2026 數位治理計畫 · 合作診所入口網
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>

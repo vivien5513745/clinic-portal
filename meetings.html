@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>會議紀錄|數位治理計畫</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html"><span class="logo-dot"></span>數位治理計畫</a>
+      <button class="nav-toggle" aria-label="開啟選單">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="dashboard.html">收案儀表板</a></li>
+        <li><a href="courses.html">課程公告</a></li>
+        <li><a href="handbook.html">教學手冊</a></li>
+        <li><a href="clinics.html">合作診所</a></li>
+        <li><a href="gallery.html">活動花絮</a></li>
+        <li><a href="meetings.html" class="active">會議紀錄</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <h1>會議紀錄</h1>
+    <p>計畫會議的紀錄、照片與簽到表(限內部人員)</p>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <!-- 密碼鎖定畫面 -->
+      <div class="lock-panel" id="lock-panel">
+        <div class="lock-icon">🔒</div>
+        <h2>此頁面受密碼保護</h2>
+        <p>請輸入通行碼以查看會議紀錄</p>
+        <form id="lock-form">
+          <input type="password" id="lock-input" placeholder="輸入通行碼" autocomplete="current-password" />
+          <button type="submit" class="btn btn-unlock">解鎖</button>
+        </form>
+        <p class="lock-error" id="lock-error" style="display:none">通行碼錯誤,請再試一次</p>
+      </div>
+
+      <!-- 解鎖後顯示的內容 -->
+      <div id="meeting-content" style="display:none">
+        <div class="post-list" id="meeting-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">© 2026 數位治理計畫 · 合作診所入口網</footer>
+  <script src="assets/site.js"></script>
+  <script src="assets/meetings.js"></script>
+</body>
+</html>
