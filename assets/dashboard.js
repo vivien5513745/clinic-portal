@@ -120,16 +120,20 @@ function rateInfo(rate) {
 }
 
 function render({ clinics, targetLabel, latestLabel }) {
-  // 有設定目標的院所才納入達標率計算
+  // 中榮(醫學中心)不計入實際收案與達標率
+  const isZhongRong = (name) => name.includes("榮民總醫院");
   const withTarget = clinics.filter((c) => c.target !== null && c.target > 0);
   const totalTarget = withTarget.reduce((s, c) => s + c.target, 0);
-  const targetActual = withTarget.reduce((s, c) => s + (c.actual || 0), 0);
-  const totalActual = clinics.reduce((s, c) => s + (c.actual || 0), 0);
-  const overallRate = totalTarget ? Math.round((targetActual / totalTarget) * 100) : 0;
+  // 實際收案:排除中榮後的加總
+  const actualExclZR = clinics
+    .filter((c) => !isZhongRong(c.name))
+    .reduce((s, c) => s + (c.actual || 0), 0);
+  // 整體達標率 = 實際收案(不含中榮)/ 收案總目標
+  const overallRate = totalTarget ? Math.round((actualExclZR / totalTarget) * 100) : 0;
 
   document.getElementById("stat-clinics").textContent = clinics.length;
   document.getElementById("stat-target").textContent = totalTarget.toLocaleString();
-  document.getElementById("stat-actual").textContent = totalActual.toLocaleString();
+  document.getElementById("stat-actual").textContent = actualExclZR.toLocaleString();
   document.getElementById("stat-rate").textContent = overallRate;
 
   // 動態標題文字
@@ -137,7 +141,7 @@ function render({ clinics, targetLabel, latestLabel }) {
   if (src) {
     src.innerHTML =
       `資料來源:Google 試算表,最新統計日期 <strong>${latestLabel}</strong>。` +
-      `目標與達標率以 <strong>${targetLabel} 目標數</strong> 計算;未設定目標的院所不列入整體達標率。`;
+      `實際收案與達標率不含臺中榮民總醫院;達標率以 <strong>${targetLabel} 目標數</strong> 計算。`;
   }
   const thTarget = document.getElementById("th-target");
   const thActual = document.getElementById("th-actual");
