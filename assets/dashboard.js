@@ -74,6 +74,7 @@ function headerToDate(mmdd) {
 
 function parseSheet(rows) {
   const header = rows[0].map((h) => h.trim());
+  const startDateIdx = header.findIndex((h) => h.includes("開始使用日"));
   const nameIdx = header.findIndex((h) => h.includes("名稱"));
 
   // 目標欄:標頭含「目標」,例如「9/30目標數」
@@ -94,7 +95,12 @@ function parseSheet(rows) {
   const sorted = targetCols.filter((t) => t.date).sort((a, b) => a.date - b.date);
   const current = sorted.find((t) => t.date >= today) || sorted[sorted.length - 1];
 
-  const clinics = rows.slice(1).map((r) => {
+  const clinics = rows.slice(1).filter((r) => {
+    // 只納入已有「開始使用日」的正式院所資料列。
+    // 試算表底部另有合計列與未啟用院所名單，若只檢查名稱會造成重複加總。
+    const startDate = startDateIdx >= 0 ? (r[startDateIdx] || "").trim() : "";
+    return /^\d{4}\/\d{1,2}\/\d{1,2}$/.test(startDate);
+  }).map((r) => {
     const name = (r[nameIdx] || "").trim();
     const target = current ? toNum(r[current.idx]) : null;
     // 從最新日期欄往右找第一個有效數字
